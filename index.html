@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Services - Syncline Technology Solutions</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+    font-family: 'Inter', sans-serif;
+    scroll-behavior: smooth;
+    cursor: none; /* Hide default cursor on desktop */
+}
+/* Apply custom cursor to interactive elements, but restore default on mobile */
+@media (hover: hover) and (pointer: fine) {
+    a, button, input, textarea, select, .service-card, [role="button"] {
+        cursor: none;
+    }
+}
+.hero-bg {
+    background-image: url('https://readdy.ai/api/search-image?query=modern%20technology%20service%20center%20with%20floating%20holographic%20displays%20showing%20different%20IT%20services%2C%20clean%20minimalist%20design%20with%20blue%20and%20green%20accent%20lighting%2C%20abstract%20tech%20elements%20and%20circuit%20patterns%20in%20background%2C%20professional%20high-tech%20environment&width=1920&height=1080&seq=services1&orientation=landscape');
+    background-size: cover;
+    background-position: center;
+}
+.service-card {
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(79, 157, 222, 0.1), transparent);
+    transform: rotate(45deg);
+    transition: all 0.5s ease;
+}
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+.service-card:hover::before {
+    animation: shine 1.5s;
+}
+@keyframes shine {
+    0% { left: -50%; }
+    100% { left: 150%; }
+}
+.service-icon {
+    transition: all 0.3s ease;
+}
+.service-card:hover .service-icon {
+    transform: scale(1.1);
+}
+.navbar {
+    transition: all 0.3s ease;
+}
+input:focus, textarea:focus {
+    outline: none;
+    border-color: #4F9DDE;
+}
+.cursor-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #8CFB91;
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: transform 0.1s ease;
+}
+.cursor-outline {
+    width: 40px;
+    height: 40px;
+    border: 2px solid #4F9DDE;
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9998;
+    transform: translate(-50%, -50%);
+    transition: transform 0.2s ease-out, width 0.2s ease-out, height 0.2s ease-out, border-color 0.2s ease-out, background-color 0.2s ease-out;
+}
+.cursor-outline.grow {
+    transform: translate(-50%, -50%) scale(1.5);
+    background-color: rgba(140, 251, 145, 0.1);
+    border-color: #8CFB91;
+}
+.floating {
+    animation: floating 3s ease-in-out infinite;
+}
+@keyframes floating {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
+}
+.floating-delay-1 {
+    animation-delay: 0.5s;
+}
+.floating-delay-2 {
+    animation-delay: 1s;
+}
+.text-gradient {
+    background: linear-gradient(90deg, #4F9DDE, #8CFB91);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+</style>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#2E2A68',secondary:'#4F9DDE', neonGreen: '#8CFB91', slateGray: '#2F3542'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+</head>
+<body class="bg-black">
+<div class="cursor-dot hidden md:block"></div>
+<div class="cursor-outline hidden md:block"></div>
+<!-- Header -->
+<header class="fixed w-full z-50 py-3 bg-black/40 backdrop-blur-sm">
+    <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#" class="flex items-center space-x-2 group flex-shrink-0">
+                <div class="relative w-12 h-12 flex items-center justify-center">
+                    <img src="image/syncline.jpg" alt="Syncline Logo Icon" class="h-10">
+                </div>
+                <div>
+                    <span class="block text-xl font-medium uppercase"><b style="color: #4F9DDE">Sync</b><b style="color: #8CFB91">line</b></span>
+                    <span class="block text-xs font-semibold text-white tracking-[0.2em] uppercase">Computer Solutions</span>
+                </div>
+            </a>
+            
+            <!-- Desktop Navigation (Centered) -->
+            <div class="hidden lg:flex justify-center items-center flex-grow">
+                <div class="flex items-center bg-[#1c1c1e] p-1 rounded-2xl">
+                    <nav class="flex items-center space-x-1">
+                        <a href="#" class="flex items-center space-x-2 px-4 py-2 text-sm text-white bg-[#333336] rounded-xl">
+                            <i class="ri-home-5-line"></i>
+                            <span>Home</span>
+                        </a>
+                        <a href="#" class="flex items-center space-x-2 px-4 py-2 text-sm text-gray-400 hover:text-white transition-colors">
+                            <i class="ri-settings-2-line"></i>
+                            <span>Services</span>
+                        </a>
+                        <a href="#" class="flex items-center space-x-2 px-4 py-2 text-sm text-gray-400 hover:text-white transition-colors">
+                            <i class="ri-lifebuoy-line"></i>
+                            <span>Support</span>
+                        </a>
+                        <a href="#" class="flex items-center space-x-2 px-4 py-2 text-sm text-gray-400 hover:text-white transition-colors">
+                            <i class="ri-newspaper-line"></i>
+                            <span>Blogs</span>
+                        </a>
+                        <a href="#" class="flex items-center space-x-2 px-4 py-2 text-sm text-gray-400 hover:text-white transition-colors">
+                            <i class="ri-building-4-line"></i>
+                            <span>About Us</span>
+                        </a>
+                        <a href="#" class="flex items-center space-x-2 px-4 py-2 text-sm text-gray-400 hover:text-white transition-colors">
+                            <i class="ri-shopping-cart-line"></i>
+                            <span>Products</span>
+                        </a>
+                    </nav>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu Button & Spacer -->
+            <div class="flex items-center justify-end flex-shrink-0 w-12 h-12">
+                <button id="mobile-menu-button" class="lg:hidden text-white text-3xl focus:outline-none">
+                    <i class="ri-menu-line"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-black/95 absolute w-full left-0 top-full">
+        <nav class="flex flex-col space-y-2 p-4">
+            <a href="#" class="flex items-center space-x-3 p-3 text-white bg-gray-800 rounded-lg">
+                <i class="ri-home-5-line"></i>
+                <span>Home</span>
+            </a>
+            <a href="#" class="flex items-center space-x-3 p-3 text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition-colors">
+                <i class="ri-settings-2-line"></i>
+                <span>Services</span>
+            </a>
+            <a href="#" class="flex items-center space-x-3 p-3 text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition-colors">
+                <i class="ri-lifebuoy-line"></i>
+                <span>Support</span>
+            </a>
+            <a href="#" class="flex items-center space-x-3 p-3 text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition-colors">
+                <i class="ri-newspaper-line"></i>
+                <span>Blogs</span>
+            </a>
+            <a href="#" class="flex items-center space-x-3 p-3 text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition-colors">
+                <i class="ri-building-4-line"></i>
+                <span>About Us</span>
+            </a>
+            <a href="#" class="flex items-center space-x-3 p-3 text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition-colors">
+                <i class="ri-shopping-cart-line"></i>
+                <span>Products</span>
+            </a>
+        </nav>
+    </div>
+</header>
+<!-- Hero Section -->
+<section class="hero-bg relative min-h-[70vh] flex items-center justify-center pt-24">
+    <div class="absolute inset-0 bg-gradient-to-r from-primary/90 to-transparent"></div>
+    <div class="container mx-auto px-6 py-24 relative z-10 flex flex-col lg:flex-row items-center gap-12 text-center lg:text-left">
+        <div class="lg:w-1/2">
+            <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight mb-6">Our Comprehensive <span class="text-neonGreen">Services</span></h1>
+            <p class="text-lg md:text-xl text-white/90 mb-8 max-w-2xl mx-auto lg:mx-0">Discover our full range of technology solutions designed to transform your business operations and drive digital innovation.</p>
+            <div class="flex flex-wrap justify-center lg:justify-start gap-4">
+                <button class="bg-secondary text-white px-8 py-3 !rounded-button font-medium hover:bg-opacity-90 transition-all whitespace-nowrap">Schedule Consultation</button>
+                <button class="bg-transparent border-2 border-neonGreen text-neonGreen px-8 py-3 !rounded-button font-medium hover:bg-neonGreen/10 transition-all whitespace-nowrap">View Pricing</button>
+            </div>
+        </div>
+        <div class="lg:w-1/2 relative mt-12 lg:mt-0">
+             <div class="absolute -top-16 -left-16 w-32 h-32 bg-secondary/20 rounded-full blur-xl floating"></div>
+             <div class="absolute -bottom-8 -right-8 w-24 h-24 bg-neonGreen/20 rounded-full blur-xl floating floating-delay-1"></div>
+             <div class="absolute top-1/2 left-1/4 w-16 h-16 bg-primary/20 rounded-full blur-lg floating floating-delay-2"></div>
+            <div class="grid grid-cols-2 gap-6">
+                <div class="bg-white/10 backdrop-blur-lg p-6 rounded-lg border border-white/20 floating">
+                    <div class="w-12 h-12 bg-neonGreen/20 rounded-full flex items-center justify-center mb-4"><i class="ri-server-line ri-lg text-neonGreen"></i></div>
+                    <h3 class="text-white text-lg font-semibold mb-2">Hardware Solutions</h3>
+                    <p class="text-white/80 text-sm">Enterprise-grade infrastructure</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur-lg p-6 rounded-lg border border-white/20 floating floating-delay-1">
+                    <div class="w-12 h-12 bg-secondary/20 rounded-full flex items-center justify-center mb-4"><i class="ri-code-s-slash-line ri-lg text-secondary"></i></div>
+                    <h3 class="text-white text-lg font-semibold mb-2">Web Development</h3>
+                    <p class="text-white/80 text-sm">Custom websites & applications</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur-lg p-6 rounded-lg border border-white/20 floating floating-delay-2">
+                    <div class="w-12 h-12 bg-secondary/20 rounded-full flex items-center justify-center mb-4"><i class="ri-palette-line ri-lg text-secondary"></i></div>
+                    <h3 class="text-white text-lg font-semibold mb-2">UI/UX Design</h3>
+                    <p class="text-white/80 text-sm">Intuitive, user-centric interfaces</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur-lg p-6 rounded-lg border border-white/20 floating">
+                    <div class="w-12 h-12 bg-neonGreen/20 rounded-full flex items-center justify-center mb-4"><i class="ri-settings-line ri-lg text-neonGreen"></i></div>
+                    <h3 class="text-white text-lg font-semibold mb-2">IT Solutions</h3>
+                    <p class="text-white/80 text-sm">End-to-end tech support</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Services Section -->
+<section id="services" class="py-24 bg-white">
+<div class="container mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-5xl font-bold text-primary mb-4">Our Comprehensive Services</h2>
+<p class="text-lg text-slateGray max-w-2xl mx-auto">We deliver integrated technology solutions that bridge hardware, software, and design to transform your business operations.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Service Card 1 -->
+<div class="service-card relative bg-white p-8 rounded-lg shadow-lg border border-gray-100 hover:border-secondary transition-all">
+<div class="service-icon w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+<i class="ri-server-line ri-2x text-primary"></i>
+</div>
+<h3 class="text-xl font-semibold text-primary mb-3">Hardware Solutions</h3>
+<p class="text-slateGray mb-6">Enterprise-grade servers, networking equipment, and custom hardware configurations designed for reliability and performance.</p>
+<a href="#" class="inline-flex items-center text-secondary font-medium">
+Learn more
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+<!-- Service Card 2 -->
+<div class="service-card relative bg-white p-8 rounded-lg shadow-lg border border-gray-100 hover:border-secondary transition-all">
+<div class="service-icon w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mb-6">
+<i class="ri-code-s-slash-line ri-2x text-secondary"></i>
+</div>
+<h3 class="text-xl font-semibold text-primary mb-3">Web Development</h3>
+<p class="text-slateGray mb-6">Custom websites, web applications, and e-commerce platforms built with cutting-edge technologies for optimal performance.</p>
+<a href="#" class="inline-flex items-center text-secondary font-medium">
+Learn more
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+<!-- Service Card 3 -->
+<div class="service-card relative bg-white p-8 rounded-lg shadow-lg border border-gray-100 hover:border-secondary transition-all">
+<div class="service-icon w-16 h-16 bg-neonGreen/10 rounded-full flex items-center justify-center mb-6">
+<i class="ri-settings-line ri-2x text-neonGreen"></i>
+</div>
+<h3 class="text-xl font-semibold text-primary mb-3">IT Solutions</h3>
+<p class="text-slateGray mb-6">Comprehensive IT management, cloud services, cybersecurity, and technical support tailored to your business needs.</p>
+<a href="#" class="inline-flex items-center text-secondary font-medium">
+Learn more
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+<!-- Service Card 4 -->
+<div class="service-card relative bg-white p-8 rounded-lg shadow-lg border border-gray-100 hover:border-secondary transition-all">
+<div class="service-icon w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+<i class="ri-layout-line ri-2x text-primary"></i>
+</div>
+<h3 class="text-xl font-semibold text-primary mb-3">UI/UX Design</h3>
+<p class="text-slateGray mb-6">User-centered design solutions that enhance user experience, improve conversion rates, and strengthen brand identity.</p>
+<a href="#" class="inline-flex items-center text-secondary font-medium">
+Learn more
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+<!-- Service Card 5 -->
+<div class="service-card relative bg-white p-8 rounded-lg shadow-lg border border-gray-100 hover:border-secondary transition-all">
+<div class="service-icon w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mb-6">
+<i class="ri-brush-line ri-2x text-secondary"></i>
+</div>
+<h3 class="text-xl font-semibold text-primary mb-3">Graphics Design</h3>
+<p class="text-slateGray mb-6">Professional graphic design services including branding, marketing materials, and digital assets that captivate your audience.</p>
+<a href="#" class="inline-flex items-center text-secondary font-medium">
+Learn more
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+<!-- Service Card 6 -->
+<div class="service-card relative bg-white p-8 rounded-lg shadow-lg border border-gray-100 hover:border-secondary transition-all">
+<div class="service-icon w-16 h-16 bg-neonGreen/10 rounded-full flex items-center justify-center mb-6">
+<i class="ri-cloud-line ri-2x text-neonGreen"></i>
+</div>
+<h3 class="text-xl font-semibold text-primary mb-3">Web Services</h3>
+<p class="text-slateGray mb-6">Scalable web hosting, domain management, API development, and cloud integration services for seamless digital operations.</p>
+<a href="#" class="inline-flex items-center text-secondary font-medium">
+Learn more
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- About Section -->
+<section id="about" class="py-24 bg-gray-50">
+<div class="container mx-auto px-6">
+<div class="flex flex-col md:flex-row items-center gap-12">
+<div class="md:w-1/2">
+<div class="relative">
+<div class="absolute -top-8 -left-8 w-64 h-64 bg-primary/5 rounded-full"></div>
+<div class="absolute -bottom-8 -right-8 w-64 h-64 bg-secondary/5 rounded-full"></div>
+<img src="https://readdy.ai/api/search-image?query=modern%20tech%20office%20with%20diverse%20team%20working%20on%20computers%2C%20professional%20IT%20specialists%20collaborating%2C%20clean%20modern%20workspace%20with%20servers%20and%20technology%20equipment%2C%20blue%20and%20green%20lighting%20accents%2C%20high-tech%20environment&width=600&height=600&seq=about1&orientation=squarish" alt="Syncline Team" class="rounded-lg shadow-xl relative z-10 w-full object-cover">
+</div>
+</div>
+<div class="md:w-1/2">
+<h2 class="text-3xl md:text-4xl font-bold text-primary mb-6">Uniting Technology & Innovation Since 2015</h2>
+<p class="text-slateGray mb-6">At Syncline, we believe in the power of integrated technology solutions. Our mission is to bridge the gap between hardware infrastructure, software development, and design excellence to deliver comprehensive digital transformation.</p>
+<p class="text-slateGray mb-8">With a team of over 50 specialists across hardware engineering, software development, and creative design, we provide end-to-end solutions that empower businesses to thrive in the digital age.</p>
+<div class="grid grid-cols-2 gap-6 mb-8">
+<div class="flex items-start">
+<div class="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center mr-4">
+<i class="ri-customer-service-2-line ri-lg text-secondary"></i>
+</div>
+<div>
+<h4 class="text-lg font-semibold text-primary mb-1">24/7 Support</h4>
+<p class="text-sm text-slateGray">Round-the-clock technical assistance</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-12 h-12 bg-neonGreen/10 rounded-full flex items-center justify-center mr-4">
+<i class="ri-shield-check-line ri-lg text-neonGreen"></i>
+</div>
+<div>
+<h4 class="text-lg font-semibold text-primary mb-1">Certified Experts</h4>
+<p class="text-sm text-slateGray">Industry-certified professionals</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4">
+<i class="ri-rocket-line ri-lg text-primary"></i>
+</div>
+<div>
+<h4 class="text-lg font-semibold text-primary mb-1">Fast Delivery</h4>
+<p class="text-sm text-slateGray">Efficient project implementation</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center mr-4">
+<i class="ri-refresh-line ri-lg text-secondary"></i>
+</div>
+<div>
+<h4 class="text-lg font-semibold text-primary mb-1">Ongoing Updates</h4>
+<p class="text-sm text-slateGray">Continuous improvement cycles</p>
+</div>
+</div>
+</div>
+<button class="bg-primary text-white px-8 py-3 !rounded-button font-medium hover:bg-opacity-90 transition-all whitespace-nowrap">About Our Team</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Projects Section -->
+<section id="projects" class="py-24 bg-white">
+<div class="container mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-5xl font-bold text-primary mb-4">Our Featured Projects</h2>
+<p class="text-lg text-slateGray max-w-2xl mx-auto">Discover how we've helped businesses across industries transform their digital presence and technological infrastructure.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Project 1 -->
+<div class="bg-white rounded-lg overflow-hidden shadow-lg group">
+<div class="relative overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=modern%20data%20center%20with%20server%20racks%2C%20blue%20LED%20lighting%2C%20clean%20professional%20environment%2C%20high-tech%20infrastructure%2C%20enterprise%20hardware%20solution&width=600&height=400&seq=proj1&orientation=landscape" alt="Enterprise Hardware Solution" class="w-full h-64 object-cover object-top transition-transform duration-500 group-hover:scale-110">
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+<div class="p-6">
+<h4 class="text-white text-xl font-semibold">Enterprise Data Center</h4>
+<p class="text-white/80">Hardware Infrastructure</p>
+</div>
+</div>
+</div>
+<div class="p-6">
+<h3 class="text-xl font-semibold text-primary mb-2">NextGen Financial Services</h3>
+<p class="text-slateGray mb-4">Complete data center redesign with high-performance server infrastructure and advanced networking solutions.</p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-primary/10 text-primary text-xs px-3 py-1 rounded-full">Hardware</span>
+<span class="bg-secondary/10 text-secondary text-xs px-3 py-1 rounded-full">Networking</span>
+<span class="bg-neonGreen/10 text-neonGreen text-xs px-3 py-1 rounded-full">Security</span>
+</div>
+</div>
+</div>
+<!-- Project 2 -->
+<div class="bg-white rounded-lg overflow-hidden shadow-lg group">
+<div class="relative overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=modern%20e-commerce%20website%20on%20multiple%20devices%2C%20responsive%20web%20design%2C%20professional%20online%20store%20interface%2C%20clean%20design%20with%20blue%20and%20green%20accents&width=600&height=400&seq=proj2&orientation=landscape" alt="E-commerce Platform" class="w-full h-64 object-cover object-top transition-transform duration-500 group-hover:scale-110">
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+<div class="p-6">
+<h4 class="text-white text-xl font-semibold">E-commerce Platform</h4>
+<p class="text-white/80">Web Development</p>
+</div>
+</div>
+</div>
+<div class="p-6">
+<h3 class="text-xl font-semibold text-primary mb-2">Luxe Retail Group</h3>
+<p class="text-slateGray mb-4">Custom e-commerce platform with integrated inventory management, payment processing, and customer analytics.</p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-primary/10 text-primary text-xs px-3 py-1 rounded-full">Web Dev</span>
+<span class="bg-secondary/10 text-secondary text-xs px-3 py-1 rounded-full">E-commerce</span>
+<span class="bg-neonGreen/10 text-neonGreen text-xs px-3 py-1 rounded-full">UI/UX</span>
+</div>
+</div>
+</div>
+<!-- Project 3 -->
+<div class="bg-white rounded-lg overflow-hidden shadow-lg group">
+<div class="relative overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=modern%20mobile%20app%20interface%20design%2C%20professional%20UI%2FUX%20design%20for%20healthcare%20application%2C%20clean%20medical%20app%20screens%20with%20blue%20and%20green%20color%20scheme&width=600&height=400&seq=proj3&orientation=landscape" alt="Healthcare App" class="w-full h-64 object-cover object-top transition-transform duration-500 group-hover:scale-110">
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+<div class="p-6">
+<h4 class="text-white text-xl font-semibold">Healthcare Application</h4>
+<p class="text-white/80">UI/UX Design</p>
+</div>
+</div>
+</div>
+<div class="p-6">
+<h3 class="text-xl font-semibold text-primary mb-2">MediConnect Health</h3>
+<p class="text-slateGray mb-4">Intuitive healthcare application with patient management, appointment scheduling, and medical record systems.</p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-primary/10 text-primary text-xs px-3 py-1 rounded-full">UI/UX</span>
+<span class="bg-secondary/10 text-secondary text-xs px-3 py-1 rounded-full">Mobile App</span>
+<span class="bg-neonGreen/10 text-neonGreen text-xs px-3 py-1 rounded-full">Healthcare</span>
+</div>
+</div>
+</div>
+</div>
+<div class="text-center mt-12">
+<button class="bg-transparent border-2 border-primary text-primary px-8 py-3 !rounded-button font-medium hover:bg-primary hover:text-white transition-all whitespace-nowrap">View All Projects</button>
+</div>
+</div>
+</section>
+<!-- Testimonials Section -->
+<section class="py-24 bg-gray-50">
+<div class="container mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-5xl font-bold text-primary mb-4">What Our Clients Say</h2>
+<p class="text-lg text-slateGray max-w-2xl mx-auto">Hear from businesses that have transformed their operations with our integrated technology solutions.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Testimonial 1 -->
+<div class="bg-white p-8 rounded-lg shadow-lg border border-gray-100">
+<div class="flex items-center mb-6">
+<div class="text-secondary">
+<i class="ri-star-fill ri-lg"></i>
+<i class="ri-star-fill ri-lg"></i>
+<i class="ri-star-fill ri-lg"></i>
+<i class="ri-star-fill ri-lg"></i>
+<i class="ri-star-fill ri-lg"></i>
+</div>
+</div>
+<p class="text-slateGray mb-6">"Syncline completely transformed our IT infrastructure. Their integrated approach to hardware and software solutions resulted in a 40% increase in operational efficiency and significant cost savings."</p>
+<div class="flex items-center">
+<div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4">
+<span class="text-primary font-semibold">JM</span>
+</div>
+<div>
+<h4 class="text-lg font-semibold text-primary">Jonathan Mitchell</h4>
+<p class="text-sm text-slateGray">CTO, Global Logistics Inc.</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 2 -->
+<div class="bg-white p-8 rounded-lg shadow-lg border border-gray-100">
+<div class="flex items-center mb-6">
+<div class="text-secondary">
+<i class="ri-star-fill ri-lg"></i>
+<i class="ri-star-fill ri-lg"></i>
+<i class="ri-star-fill ri-lg"></i>
+<i class="ri-star-fill ri-lg"></i>
+<i class="ri-star-fill ri-lg"></i>
+</div>
+</div>
+<p class="text-slateGray mb-6">"The web development and UI/UX design services provided by Syncline exceeded our expectations. Our new e-commerce platform has resulted in a 65% increase in conversion rates and significantly improved customer satisfaction."</p>
+<div class="flex items-center">
+<div class="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center mr-4">
+<span class="text-secondary font-semibold">SR</span>
+</div>
+<div>
+<h4 class="text-lg font-semibold text-primary">Sophia Rodriguez</h4>
+<p class="text-sm text-slateGray">Marketing Director, Retail Innovations</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 3 -->
+<div class="bg-white p-8 rounded-lg shadow-lg border border-gray-100">
+<div class="flex items-center mb-6">
+<div class="text-secondary">
+<i class="ri-star-fill ri-lg"></i>
+<i class="ri-star-fill ri-lg"></i>
+<i class="ri-star-fill ri-lg"></i>
+<i class="ri-star-fill ri-lg"></i>
+<i class="ri-star-fill ri-lg"></i>
+</div>
+</div>
+<p class="text-slateGray mb-6">"Syncline's IT solutions and ongoing support have been instrumental in our digital transformation journey. Their team's expertise in both hardware and software has provided us with a competitive edge in our industry."</p>
+<div class="flex items-center">
+<div class="w-12 h-12 bg-neonGreen/10 rounded-full flex items-center justify-center mr-4">
+<span class="text-neonGreen font-semibold">DK</span>
+</div>
+<div>
+<h4 class="text-lg font-semibold text-primary">David Kim</h4>
+<p class="text-sm text-slateGray">CEO, TechMed Solutions</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-24 bg-primary relative overflow-hidden">
+<div class="absolute top-0 right-0 w-1/2 h-full opacity-10" style="background-image: url('https://readdy.ai/api/search-image?query=abstract%20technology%20pattern%2C%20circuit%20board%20design%2C%20blue%20and%20green%20tech%20elements%2C%20futuristic%20technology%20background&width=800&height=800&seq=cta1&orientation=squarish'); background-size: cover;"></div>
+<div class="container mx-auto px-6 relative z-10">
+<div class="max-w-3xl mx-auto text-center">
+<h2 class="text-3xl md:text-5xl font-bold text-white mb-6">Ready to Transform Your Digital Infrastructure?</h2>
+<p class="text-lg text-white/80 mb-8">Partner with Syncline for comprehensive technology solutions that integrate hardware, software, and design excellence.</p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<button class="bg-neonGreen text-primary px-8 py-3 !rounded-button font-medium hover:bg-opacity-90 transition-all whitespace-nowrap">Schedule a Consultation</button>
+<button class="bg-transparent border-2 border-white text-white px-8 py-3 !rounded-button font-medium hover:bg-white/10 transition-all whitespace-nowrap">View Our Solutions</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section id="contact" class="py-24 bg-white">
+<div class="container mx-auto px-6">
+<div class="flex flex-col lg:flex-row gap-12">
+<div class="lg:w-1/2">
+<h2 class="text-3xl md:text-4xl font-bold text-primary mb-6">Get in Touch</h2>
+<p class="text-slateGray mb-8">Have questions about our services or ready to start your next project? Contact our team for a personalized consultation.</p>
+<form class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div>
+<label for="name" class="block text-sm font-medium text-slateGray mb-2">Full Name</label>
+<input type="text" id="name" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-secondary" placeholder="John Smith">
+</div>
+<div>
+<label for="email" class="block text-sm font-medium text-slateGray mb-2">Email Address</label>
+<input type="email" id="email" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-secondary" placeholder="john@example.com">
+</div>
+</div>
+<div>
+<label for="company" class="block text-sm font-medium text-slateGray mb-2">Company Name</label>
+<input type="text" id="company" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-secondary" placeholder="Your Company Ltd.">
+</div>
+<div>
+<label for="service" class="block text-sm font-medium text-slateGray mb-2">Service of Interest</label>
+<div class="relative">
+<select id="service" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-secondary appearance-none pr-8">
+<option value="" disabled selected>Select a service</option>
+<option value="hardware">Hardware Solutions</option>
+<option value="webdev">Web Development</option>
+<option value="it">IT Solutions</option>
+<option value="uiux">UI/UX Design</option>
+<option value="graphics">Graphics Design</option>
+<option value="webservices">Web Services</option>
+</select>
+<div class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
+<i class="ri-arrow-down-s-line text-slateGray"></i>
+</div>
+</div>
+</div>
+<div>
+<label for="message" class="block text-sm font-medium text-slateGray mb-2">Your Message</label>
+<textarea id="message" rows="4" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-secondary" placeholder="Tell us about your project or inquiry..."></textarea>
+</div>
+<button type="submit" class="bg-primary text-white px-8 py-3 !rounded-button font-medium hover:bg-opacity-90 transition-all whitespace-nowrap w-full md:w-auto">Send Message</button>
+</form>
+</div>
+<div class="lg:w-1/2">
+<div class="bg-gray-50 rounded-lg overflow-hidden h-full">
+<div class="h-64 relative">
+<div style="background-image: url('https://public.readdy.ai/gen_page/map_placeholder_1280x720.png'); background-size: cover; background-position: center;" class="absolute inset-0"></div>
+<div class="absolute inset-0 bg-primary/30 flex items-center justify-center">
+<div class="bg-white p-4 rounded-lg shadow-lg">
+<div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-2">
+<i class="ri-map-pin-line ri-lg text-primary"></i>
+</div>
+<p class="text-primary font-medium text-center">Syncline Headquarters</p>
+</div>
+</div>
+</div>
+<div class="p-8">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div>
+<h3 class="text-xl font-semibold text-primary mb-4">Contact Information</h3>
+<ul class="space-y-4">
+<li class="flex items-start">
+<div class="w-10 h-10 bg-secondary/10 rounded-full flex items-center justify-center mr-4">
+<i class="ri-mail-line text-secondary"></i>
+</div>
+<div>
+<p class="text-sm text-slateGray">Email</p>
+<p class="text-primary font-medium">info@syncline.tech</p>
+</div>
+</li>
+<li class="flex items-start">
+<div class="w-10 h-10 bg-neonGreen/10 rounded-full flex items-center justify-center mr-4">
+<i class="ri-phone-line text-neonGreen"></i>
+</div>
+<div>
+<p class="text-sm text-slateGray">Phone</p>
+<p class="text-primary font-medium">+1 (555) 123-4567</p>
+</div>
+</li>
+<li class="flex items-start">
+<div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-4">
+<i class="ri-map-pin-line text-primary"></i>
+</div>
+<div>
+<p class="text-sm text-slateGray">Address</p>
+<p class="text-primary font-medium">1234 Tech Boulevard, Suite 500<br>San Francisco, CA 94107</p>
+</div>
+</li>
+</ul>
+</div>
+<div>
+<h3 class="text-xl font-semibold text-primary mb-4">Business Hours</h3>
+<ul class="space-y-3">
+<li class="flex justify-between">
+<span class="text-slateGray">Monday - Friday</span>
+<span class="text-primary font-medium">9:00 AM - 6:00 PM</span>
+</li>
+<li class="flex justify-between">
+<span class="text-slateGray">Saturday</span>
+<span class="text-primary font-medium">10:00 AM - 4:00 PM</span>
+</li>
+<li class="flex justify-between">
+<span class="text-slateGray">Sunday</span>
+<span class="text-primary font-medium">Closed</span>
+</li>
+</ul>
+<h3 class="text-xl font-semibold text-primary mt-8 mb-4">Follow Us</h3>
+<div class="flex space-x-4">
+<a href="#" class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-all">
+<i class="ri-linkedin-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-all">
+<i class="ri-twitter-x-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-all">
+<i class="ri-facebook-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-all">
+<i class="ri-instagram-fill"></i>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Newsletter Section -->
+<section class="py-16 bg-secondary/10">
+<div class="container mx-auto px-6">
+<div class="max-w-3xl mx-auto text-center">
+<h2 class="text-2xl md:text-3xl font-bold text-primary mb-4">Stay Updated with Syncline</h2>
+<p class="text-slateGray mb-8">Subscribe to our newsletter for the latest technology insights, industry trends, and exclusive offers.</p>
+<div class="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
+<input type="email" class="flex-grow px-4 py-3 rounded-lg border border-gray-300 focus:border-secondary" placeholder="Enter your email address">
+<button class="bg-primary text-white px-6 py-3 !rounded-button font-medium hover:bg-opacity-90 transition-all whitespace-nowrap">Subscribe</button>
+</div>
+<p class="text-xs text-slateGray mt-4">By subscribing, you agree to our Privacy Policy and consent to receive updates from our company.</p>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-primary text-white pt-16 pb-8">
+<div class="container mx-auto px-6">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+<div>
+<a href="#" class="text-3xl font-['Pacifico'] text-white mb-6 inline-block">Syncline</a>
+<p class="text-white/80 mb-6">Uniting hardware expertise, innovative IT solutions, and cutting-edge web services to transform your digital presence.</p>
+<div class="flex space-x-4">
+<a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-all">
+<i class="ri-linkedin-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-all">
+<i class="ri-twitter-x-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-all">
+<i class="ri-facebook-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-all">
+<i class="ri-instagram-fill"></i>
+</a>
+</div>
+</div>
+<div>
+<h3 class="text-xl font-semibold mb-6">Our Services</h3>
+<ul class="space-y-3">
+<li><a href="#" class="text-white/80 hover:text-neonGreen transition-colors">Hardware Solutions</a></li>
+<li><a href="#" class="text-white/80 hover:text-neonGreen transition-colors">Web Development</a></li>
+<li><a href="#" class="text-white/80 hover:text-neonGreen transition-colors">IT Solutions</a></li>
+<li><a href="#" class="text-white/80 hover:text-neonGreen transition-colors">UI/UX Design</a></li>
+<li><a href="#" class="text-white/80 hover:text-neonGreen transition-colors">Graphics Design</a></li>
+<li><a href="#" class="text-white/80 hover:text-neonGreen transition-colors">Web Services</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-xl font-semibold mb-6">Quick Links</h3>
+<ul class="space-y-3">
+<li><a href="#" class="text-white/80 hover:text-neonGreen transition-colors">About Us</a></li>
+<li><a href="#" class="text-white/80 hover:text-neonGreen transition-colors">Our Projects</a></li>
+<li><a href="#" class="text-white/80 hover:text-neonGreen transition-colors">Testimonials</a></li>
+<li><a href="#" class="text-white/80 hover:text-neonGreen transition-colors">Careers</a></li>
+<li><a href="#" class="text-white/80 hover:text-neonGreen transition-colors">Support</a></li>
+<li><a href="#" class="text-white/80 hover:text-neonGreen transition-colors">Contact Us</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-xl font-semibold mb-6">Contact Us</h3>
+<ul class="space-y-4">
+<li class="flex items-start">
+<div class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center mr-4">
+<i class="ri-map-pin-line"></i>
+</div>
+<span class="text-white/80">1234 Tech Boulevard, Suite 500<br>San Francisco, CA 94107</span>
+</li>
+<li class="flex items-start">
+<div class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center mr-4">
+<i class="ri-mail-line"></i>
+</div>
+<span class="text-white/80">info@syncline.tech</span>
+</li>
+<li class="flex items-start">
+<div class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center mr-4">
+<i class="ri-phone-line"></i>
+</div>
+<span class="text-white/80">+1 (555) 123-4567</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="pt-8 border-t border-white/20 flex flex-col md:flex-row justify-between items-center">
+<p class="text-white/60 text-sm mb-4 md:mb-0">© 2025 Syncline. All rights reserved.</p>
+<div class="flex space-x-6">
+<a href="#" class="text-white/60 text-sm hover:text-white transition-colors">Privacy Policy</a>
+<a href="#" class="text-white/60 text-sm hover:text-white transition-colors">Terms of Service</a>
+<a href="#" class="text-white/60 text-sm hover:text-white transition-colors">Cookie Policy</a>
+</div>
+</div>
+</div>
+</footer>
+<!-- Back to top button -->
+<button id="back-to-top" class="fixed bottom-8 right-8 w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center opacity-0 invisible transition-all z-50">
+<i class="ri-arrow-up-line ri-lg"></i>
+</button>
+
+<script id="mobile-menu-script">
+document.addEventListener('DOMContentLoaded', () => {
+    const menuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = menuButton.querySelector('i');
+
+    menuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        if (mobileMenu.classList.contains('hidden')) {
+            menuIcon.classList.remove('ri-close-line');
+            menuIcon.classList.add('ri-menu-line');
+        } else {
+            menuIcon.classList.remove('ri-menu-line');
+            menuIcon.classList.add('ri-close-line');
+        }
+    });
+});
+</script>
+<script id="custom-cursor-script">
+    document.addEventListener('DOMContentLoaded', () => {
+        const cursorDot = document.querySelector('.cursor-dot');
+        const cursorOutline = document.querySelector('.cursor-outline');
+
+        // This check ensures the script only runs on devices that support hover (non-touch)
+        if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+            let mouseX = 0;
+            let mouseY = 0;
+
+            let outlineX = 0;
+            let outlineY = 0;
+
+            window.addEventListener('mousemove', (e) => {
+                mouseX = e.clientX;
+                mouseY = e.clientY;
+            });
+            
+            const animateCursor = () => {
+                cursorDot.style.left = `${mouseX}px`;
+                cursorDot.style.top = `${mouseY}px`;
+                
+                const speed = 0.15;
+                outlineX += (mouseX - outlineX) * speed;
+                outlineY += (mouseY - outlineY) * speed;
+                cursorOutline.style.left = `${outlineX}px`;
+                cursorOutline.style.top = `${outlineY}px`;
+                
+                requestAnimationFrame(animateCursor);
+            };
+            
+            requestAnimationFrame(animateCursor);
+
+            const interactiveElements = document.querySelectorAll(
+                'a, button, input, textarea, select, .service-card, [role="button"]'
+            );
+
+            interactiveElements.forEach(el => {
+                el.addEventListener('mouseenter', () => {
+                    cursorOutline.classList.add('grow');
+                });
+                el.addEventListener('mouseleave', () => {
+                    cursorOutline.classList.remove('grow');
+                });
+            });
+        }
+    });
+</script>
+<script id="back-to-top-script">
+document.addEventListener('DOMContentLoaded', function() {
+const backToTopButton = document.getElementById('back-to-top');
+window.addEventListener('scroll', function() {
+if (window.scrollY > 300) {
+backToTopButton.classList.remove('opacity-0', 'invisible');
+backToTopButton.classList.add('opacity-100', 'visible');
+} else {
+backToTopButton.classList.add('opacity-0', 'invisible');
+backToTopButton.classList.remove('opacity-100', 'visible');
+}
+});
+backToTopButton.addEventListener('click', function() {
+window.scrollTo({
+top: 0,
+behavior: 'smooth'
+});
+});
+});
+</script>
+</body>
+</html>
