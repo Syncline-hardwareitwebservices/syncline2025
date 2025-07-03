@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Syncline Insights Blog - Technology News & Updates</title>
+<link rel="icon" href="image/logosyncline.png" type="image/x-icon">
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+    font-family: 'Inter', sans-serif;
+    scroll-behavior: smooth;
+    cursor: none; /* Hide default cursor on desktop */
+}
+/* Apply custom cursor to interactive elements, but restore default on mobile */
+@media (hover: hover) and (pointer: fine) {
+    a, button, input, textarea, select, .blog-card, [role="button"] {
+        cursor: none;
+    }
+}
+.hero-bg {
+    background-image: url('https://readdy.ai/api/search-image?query=abstract%20technology%20background%20with%20glowing%20data%20streams%20and%20digital%20particles%2C%20dark%20blue%20and%20green%20colors%2C%20futuristic%20concept&width=1920&height=1080&seq=blog1&orientation=landscape');
+    background-size: cover;
+    background-position: center;
+}
+.blog-card {
+    transition: all 0.3s ease;
+}
+.blog-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+.blog-card-image {
+    transition: transform 0.3s ease;
+}
+.blog-card:hover .blog-card-image {
+    transform: scale(1.05);
+}
+input:focus, textarea:focus {
+    outline: none;
+    border-color: #4F9DDE;
+    box-shadow: 0 0 0 2px rgba(79, 157, 222, 0.2);
+}
+.cursor-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #8CFB91;
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: transform 0.1s ease;
+}
+.cursor-outline {
+    width: 40px;
+    height: 40px;
+    border: 2px solid #4F9DDE;
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9998;
+    transform: translate(-50%, -50%);
+    transition: transform 0.2s ease-out, width 0.2s ease-out, height 0.2s ease-out, border-color 0.2s ease-out, background-color 0.2s ease-out;
+}
+.cursor-outline.grow {
+    transform: translate(-50%, -50%) scale(1.5);
+    background-color: rgba(140, 251, 145, 0.1);
+    border-color: #8CFB91;
+}
+.text-gradient {
+    background: linear-gradient(90deg, #4F9DDE, #8CFB91);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+</style>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#2E2A68',secondary:'#4F9DDE', neonGreen: '#8CFB91', slateGray: '#2F3542'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+</head>
+<body class="bg-white">
+<div class="cursor-dot hidden md:block"></div>
+<div class="cursor-outline hidden md:block"></div>
+<!-- Header -->
+<header class="fixed w-full z-50 py-3 bg-black/40 backdrop-blur-sm">
+    <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center">
+            <!-- Logo -->
+            <a href="index.html" class="flex items-center space-x-2 group flex-shrink-0">
+                <div class="relative w-12 h-12 flex items-center justify-center">
+                    <img src="image/syncline.jpg" alt="Syncline Logo Icon" class="h-10">
+                </div>
+                <div>
+                    <span class="block text-xl font-medium uppercase"><b style="color: #4F9DDE">Sync</b><b style="color: #8CFB91">line</b></span>
+                    <span class="block text-xs font-semibold text-white tracking-[0.2em] uppercase">Computer Solutions</span>
+                </div>
+            </a>
+            
+            <!-- Desktop Navigation (Centered) -->
+            <div class="hidden lg:flex justify-center items-center flex-grow">
+                <div class="flex items-center bg-[#1c1c1e] p-1 rounded-2xl">
+                    <nav class="flex items-center space-x-1">
+                        <a href="index.html" class="flex items-center space-x-2 px-4 py-2 text-sm text-gray-400 hover:text-white transition-colors">
+                            <i class="ri-home-5-line"></i>
+                            <span>Home</span>
+                        </a>
+                        <a href="services.html" class="flex items-center space-x-2 px-4 py-2 text-sm text-gray-400 hover:text-white transition-colors">
+                            <i class="ri-settings-2-line"></i>
+                            <span>Services</span>
+                        </a>
+                        <a href="support.html" class="flex items-center space-x-2 px-4 py-2 text-sm text-gray-400 hover:text-white transition-colors">
+                            <i class="ri-lifebuoy-line"></i>
+                            <span>Support</span>
+                        </a>
+                        <a href="blogs.html" class="flex items-center space-x-2 px-4 py-2 text-sm text-white bg-[#333336] rounded-xl">
+                            <i class="ri-newspaper-line"></i>
+                            <span>Blogs</span>
+                        </a>
+                        <a href="about.html" class="flex items-center space-x-2 px-4 py-2 text-sm text-gray-400 hover:text-white transition-colors">
+                            <i class="ri-building-4-line"></i>
+                            <span>About Us</span>
+                        </a>
+                        <a href="products.html" class="flex items-center space-x-2 px-4 py-2 text-sm text-gray-400 hover:text-white transition-colors">
+                            <i class="ri-shopping-cart-line"></i>
+                            <span>Products</span>
+                        </a>
+                    </nav>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu Button & Spacer -->
+            <div class="flex items-center justify-end flex-shrink-0 w-12 h-12">
+                <button id="mobile-menu-button" class="lg:hidden text-white text-3xl focus:outline-none">
+                    <i class="ri-menu-line"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-black/95 absolute w-full left-0 top-full">
+        <nav class="flex flex-col space-y-2 p-4">
+            <a href="index.html" class="flex items-center space-x-3 p-3 text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition-colors">
+                <i class="ri-home-5-line"></i>
+                <span>Home</span>
+            </a>
+            <a href="services.html" class="flex items-center space-x-3 p-3 text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition-colors">
+                <i class="ri-settings-2-line"></i>
+                <span>Services</span>
+            </a>
+            <a href="support.html" class="flex items-center space-x-3 p-3 text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition-colors">
+                <i class="ri-lifebuoy-line"></i>
+                <span>Support</span>
+            </a>
+            <a href="blogs.html" class="flex items-center space-x-3 p-3 text-white bg-gray-800 rounded-lg">
+                <i class="ri-newspaper-line"></i>
+                <span>Blogs</span>
+            </a>
+            <a href="about.html" class="flex items-center space-x-3 p-3 text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition-colors">
+                <i class="ri-building-4-line"></i>
+                <span>About Us</span>
+            </a>
+            <a href="products.html" class="flex items-center space-x-3 p-3 text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition-colors">
+                <i class="ri-shopping-cart-line"></i>
+                <span>Products</span>
+            </a>
+        </nav>
+    </div>
+</header>
+
+<!-- Hero Section -->
+<section class="hero-bg relative bg-black pt-40 pb-24 text-center">
+    <div class="absolute inset-0 bg-primary/80"></div>
+    <div class="container mx-auto px-6 relative z-10">
+        <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight mb-4">Syncline <span class="text-gradient">Insights</span></h1>
+        <p class="text-lg text-white/80 max-w-2xl mx-auto">Your source for the latest trends in technology, expert analysis, and company news.</p>
+    </div>
+</section>
+
+<!-- Main Content -->
+<main class="py-24 bg-gray-50">
+    <div class="container mx-auto px-6">
+        <div class="flex flex-col lg:flex-row gap-12">
+            
+            <!-- Blog Posts -->
+            <div class="lg:w-2/3">
+                
+                <!-- Featured Post -->
+                <article class="blog-card bg-white rounded-lg shadow-lg overflow-hidden mb-12">
+                    <a href="#" class="block overflow-hidden">
+                        <img src="https://readdy.ai/api/search-image?query=cybersecurity%20expert%20at%20a%20workstation%20with%20multiple%20monitors%20showing%20code%20and%20data%2C%20dark%20room%20with%20blue%20and%20green%20lighting%2C%20high-tech&width=1200&height=600&seq=blog-feat1&orientation=landscape" alt="Cybersecurity threats" class="blog-card-image w-full h-auto object-cover">
+                    </a>
+                    <div class="p-8">
+                        <div class="mb-4">
+                            <a href="#" class="bg-secondary/10 text-secondary text-xs font-semibold px-3 py-1 rounded-full">Cybersecurity</a>
+                        </div>
+                        <h2 class="text-3xl font-bold text-primary mb-4"><a href="#" class="hover:text-secondary transition-colors">The Top 5 Cybersecurity Threats for Businesses in 2025</a></h2>
+                        <div class="flex items-center text-sm text-slateGray mb-4">
+                            <span class="flex items-center mr-6"><i class="ri-user-line mr-2"></i>Jane Doe</span>
+                            <span class="flex items-center"><i class="ri-calendar-line mr-2"></i>July 15, 2024</span>
+                        </div>
+                        <p class="text-slateGray mb-6">As technology evolves, so do the threats that target businesses. In this comprehensive guide, we break down the most significant cybersecurity risks to watch for in the coming year and provide actionable steps to fortify your defenses.</p>
+                        <a href="#" class="font-semibold text-secondary inline-flex items-center">Read More <i class="ri-arrow-right-line ml-2"></i></a>
+                    </div>
+                </article>
+
+                <!-- Regular Posts Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <article class="blog-card bg-white rounded-lg shadow-lg overflow-hidden">
+                        <a href="#" class="block overflow-hidden"><img src="image/cloud.png" alt="Cloud Computing" class="blog-card-image w-full h-64 object-cover"></a>
+                        <div class="p-6">
+                            <a href="#" class="bg-primary/10 text-primary text-xs font-semibold px-3 py-1 rounded-full mb-3 inline-block">Cloud Services</a>
+                            <h3 class="text-xl font-bold text-primary mb-3"><a href="#" class="hover:text-secondary transition-colors">Is a Multi-Cloud Strategy Right for You?</a></h3>
+                            <p class="text-slateGray text-sm mb-4">Exploring the pros and cons of leveraging multiple cloud providers to optimize cost, performance, and redundancy.</p>
+                            <div class="flex items-center text-xs text-slateGray border-t pt-4">
+                                <span class="flex items-center mr-4"><i class="ri-user-line mr-1"></i>John Smith</span>
+                                <span class="flex items-center"><i class="ri-calendar-line mr-1"></i>July 10, 2024</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="blog-card bg-white rounded-lg shadow-lg overflow-hidden">
+                        <a href="#" class="block overflow-hidden"><img src="image/ai.png" alt="Artificial Intelligence" class="blog-card-image w-full h-64 object-cover"></a>
+                        <div class="p-6">
+                            <a href="#" class="bg-neonGreen/10 text-neonGreen text-xs font-semibold px-3 py-1 rounded-full mb-3 inline-block">AI & Machine Learning</a>
+                            <h3 class="text-xl font-bold text-primary mb-3"><a href="#" class="hover:text-secondary transition-colors">How AI is Revolutionizing IT Support</a></h3>
+                            <p class="text-slateGray text-sm mb-4">From predictive maintenance to automated ticket resolution, AI is changing the game for IT helpdesks and support teams.</p>
+                             <div class="flex items-center text-xs text-slateGray border-t pt-4">
+                                <span class="flex items-center mr-4"><i class="ri-user-line mr-1"></i>Emily White</span>
+                                <span class="flex items-center"><i class="ri-calendar-line mr-1"></i>July 5, 2024</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="blog-card bg-white rounded-lg shadow-lg overflow-hidden">
+                        <a href="#" class="block overflow-hidden"><img src="image/custom.png" alt="Custom PC Build" class="blog-card-image w-full h-64 object-cover"></a>
+                        <div class="p-6">
+                            <a href="#" class="bg-primary/10 text-primary text-xs font-semibold px-3 py-1 rounded-full mb-3 inline-block">Hardware</a>
+                            <h3 class="text-xl font-bold text-primary mb-3"><a href="#" class="hover:text-secondary transition-colors">The Benefits of Custom-Built Workstations</a></h3>
+                            <p class="text-slateGray text-sm mb-4">Why off-the-shelf solutions can't compete with a workstation tailored specifically for your professional needs.</p>
+                             <div class="flex items-center text-xs text-slateGray border-t pt-4">
+                                <span class="flex items-center mr-4"><i class="ri-user-line mr-1"></i>Mark Chen</span>
+                                <span class="flex items-center"><i class="ri-calendar-line mr-1"></i>June 28, 2024</span>
+                            </div>
+                        </div>
+                    </article>
+                    
+                     <article class="blog-card bg-white rounded-lg shadow-lg overflow-hidden">
+                        <a href="#" class="block overflow-hidden"><img src="image/cms.png" alt="Web Development" class="blog-card-image w-full h-64 object-cover"></a>
+                        <div class="p-6">
+                            <a href="#" class="bg-secondary/10 text-secondary text-xs font-semibold px-3 py-1 rounded-full mb-3 inline-block">Web Development</a>
+                            <h3 class="text-xl font-bold text-primary mb-3"><a href="#" class="hover:text-secondary transition-colors">Headless CMS: The Future of Web Content?</a></h3>
+                            <p class="text-slateGray text-sm mb-4">We explore the rise of headless content management systems and how they offer greater flexibility for developers.</p>
+                             <div class="flex items-center text-xs text-slateGray border-t pt-4">
+                                <span class="flex items-center mr-4"><i class="ri-user-line mr-1"></i>Sarah Jenkins</span>
+                                <span class="flex items-center"><i class="ri-calendar-line mr-1"></i>June 21, 2024</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Pagination -->
+                <nav class="flex justify-center items-center space-x-2 mt-16">
+                    <a href="#" class="px-4 py-2 text-slateGray bg-white rounded-md hover:bg-secondary hover:text-white transition-colors"><i class="ri-arrow-left-s-line"></i></a>
+                    <a href="#" class="px-4 py-2 text-white bg-secondary rounded-md">1</a>
+                    <a href="#" class="px-4 py-2 text-slateGray bg-white rounded-md hover:bg-secondary hover:text-white transition-colors">2</a>
+                    <a href="#" class="px-4 py-2 text-slateGray bg-white rounded-md hover:bg-secondary hover:text-white transition-colors">3</a>
+                    <span class="px-4 py-2 text-slateGray">...</span>
+                    <a href="#" class="px-4 py-2 text-slateGray bg-white rounded-md hover:bg-secondary hover:text-white transition-colors">8</a>
+                    <a href="#" class="px-4 py-2 text-slateGray bg-white rounded-md hover:bg-secondary hover:text-white transition-colors"><i class="ri-arrow-right-s-line"></i></a>
+                </nav>
+
+            </div>
+
+            <!-- Sidebar -->
+            <aside class="lg:w-1/3 space-y-8">
+                <!-- Search -->
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-bold text-primary mb-4">Search</h3>
+                    <div class="relative">
+                        <input type="search" placeholder="Search blog..." class="w-full px-4 py-2 border border-gray-300 rounded-md pl-10">
+                        <i class="ri-search-line absolute left-3 top-1/2 -translate-y-1/2 text-slateGray"></i>
+                    </div>
+                </div>
+
+                <!-- Categories -->
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-bold text-primary mb-4">Categories</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="flex justify-between items-center text-slateGray hover:text-secondary"><span class="flex items-center"><i class="ri-folder-2-line mr-2"></i>Cybersecurity</span><span class="text-xs bg-gray-100 px-2 py-1 rounded">8</span></a></li>
+                        <li><a href="#" class="flex justify-between items-center text-slateGray hover:text-secondary"><span class="flex items-center"><i class="ri-folder-2-line mr-2"></i>Cloud Services</span><span class="text-xs bg-gray-100 px-2 py-1 rounded">12</span></a></li>
+                        <li><a href="#" class="flex justify-between items-center text-slateGray hover:text-secondary"><span class="flex items-center"><i class="ri-folder-2-line mr-2"></i>Web Development</span><span class="text-xs bg-gray-100 px-2 py-1 rounded">5</span></a></li>
+                        <li><a href="#" class="flex justify-between items-center text-slateGray hover:text-secondary"><span class="flex items-center"><i class="ri-folder-2-line mr-2"></i>Hardware</span><span class="text-xs bg-gray-100 px-2 py-1 rounded">9</span></a></li>
+                        <li><a href="#" class="flex justify-between items-center text-slateGray hover:text-secondary"><span class="flex items-center"><i class="ri-folder-2-line mr-2"></i>AI & Machine Learning</span><span class="text-xs bg-gray-100 px-2 py-1 rounded">7</span></a></li>
+                    </ul>
+                </div>
+
+                <!-- Recent Posts -->
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-bold text-primary mb-4">Recent Posts</h3>
+                    <div class="space-y-4">
+                        <a href="#" class="flex items-center group">
+                            <img src="image/threats.png" alt="Cybersecurity" class="w-16 h-16 rounded-md object-cover mr-4">
+                            <div>
+                                <h4 class="font-semibold text-primary group-hover:text-secondary transition-colors">The Top 5 Cybersecurity Threats</h4>
+                                <span class="text-xs text-slateGray">July 15, 2024</span>
+                            </div>
+                        </a>
+                         <a href="#" class="flex items-center group">
+                            <img src="image/multi.png" alt="Cloud Computing" class="w-16 h-16 rounded-md object-cover mr-4">
+                            <div>
+                                <h4 class="font-semibold text-primary group-hover:text-secondary transition-colors">Is a Multi-Cloud Strategy Right for You?</h4>
+                                <span class="text-xs text-slateGray">July 10, 2024</span>
+                            </div>
+                        </a>
+                         <a href="#" class="flex items-center group">
+                            <img src="image/aisupport.png" alt="Artificial Intelligence" class="w-16 h-16 rounded-md object-cover mr-4">
+                            <div>
+                                <h4 class="font-semibold text-primary group-hover:text-secondary transition-colors">How AI is Revolutionizing IT Support</h4>
+                                <span class="text-xs text-slateGray">July 5, 2024</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                 <!-- Tags -->
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-bold text-primary mb-4">Tags</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <a href="#" class="bg-gray-100 text-slateGray hover:bg-primary hover:text-white text-sm px-3 py-1 rounded-full transition-colors">IT Support</a>
+                        <a href="#" class="bg-gray-100 text-slateGray hover:bg-primary hover:text-white text-sm px-3 py-1 rounded-full transition-colors">Security</a>
+                        <a href="#" class="bg-gray-100 text-slateGray hover:bg-primary hover:text-white text-sm px-3 py-1 rounded-full transition-colors">Networking</a>
+                        <a href="#" class="bg-gray-100 text-slateGray hover:bg-primary hover:text-white text-sm px-3 py-1 rounded-full transition-colors">AWS</a>
+                        <a href="#" class="bg-gray-100 text-slateGray hover:bg-primary hover:text-white text-sm px-3 py-1 rounded-full transition-colors">DevOps</a>
+                        <a href="#" class="bg-gray-100 text-slateGray hover:bg-primary hover:text-white text-sm px-3 py-1 rounded-full transition-colors">UI/UX</a>
+                        <a href="#" class="bg-gray-100 text-slateGray hover:bg-primary hover:text-white text-sm px-3 py-1 rounded-full transition-colors">PC Builds</a>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+</main>
+
+
+<!-- Footer -->
+<footer class="bg-primary text-white pt-16 pb-8">
+<div class="container mx-auto px-6">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+<div>
+<a href="index.html" class="text-3xl font-['Pacifico'] text-white mb-6 inline-block">Syncline</a>
+<p class="text-white/80 mb-6">Uniting hardware expertise, innovative IT solutions, and cutting-edge web services to transform your digital presence.</p>
+<div class="flex space-x-4">
+<a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-all"><i class="ri-linkedin-fill"></i></a>
+<a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-all"><i class="ri-twitter-x-fill"></i></a>
+<a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-all"><i class="ri-facebook-fill"></i></a>
+<a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-all"><i class="ri-instagram-fill"></i></a>
+</div>
+</div>
+<div>
+<h3 class="text-xl font-semibold mb-6">Our Services</h3>
+<ul class="space-y-3">
+<li><a href="services.html#service-hardware" class="text-white/80 hover:text-neonGreen transition-colors">Hardware Solutions</a></li>
+<li><a href="services.html#service-webdev" class="text-white/80 hover:text-neonGreen transition-colors">Web Development</a></li>
+<li><a href="services.html#service-it" class="text-white/80 hover:text-neonGreen transition-colors">IT Solutions</a></li>
+<li><a href="services.html#service-uiux" class="text-white/80 hover:text-neonGreen transition-colors">UI/UX Design</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-xl font-semibold mb-6">Quick Links</h3>
+<ul class="space-y-3">
+<li><a href="about.html" class="text-white/80 hover:text-neonGreen transition-colors">About Us</a></li>
+<li><a href="index.html#projects" class="text-white/80 hover:text-neonGreen transition-colors">Our Projects</a></li>
+<li><a href="services.html" class="text-white/80 hover:text-neonGreen transition-colors">All Services</a></li>
+<li><a href="support.html" class="text-white/80 hover:text-neonGreen transition-colors">Support</a></li>
+<li><a href="index.html#contact" class="text-white/80 hover:text-neonGreen transition-colors">Contact Us</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-xl font-semibold mb-6">Contact Us</h3>
+<ul class="space-y-4">
+<li class="flex items-start">
+<div class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center mr-4"><i class="ri-map-pin-line"></i></div>
+<span class="text-white/80">1234 Tech Boulevard, Suite 500<br>San Francisco, CA 94107</span>
+</li>
+<li class="flex items-start">
+<div class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center mr-4"><i class="ri-mail-line"></i></div>
+<span class="text-white/80">info@syncline.tech</span>
+</li>
+<li class="flex items-start">
+<div class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center mr-4"><i class="ri-phone-line"></i></div>
+<span class="text-white/80">+1 (555) 123-4567</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="pt-8 border-t border-white/20 flex flex-col md:flex-row justify-between items-center">
+<p class="text-white/60 text-sm mb-4 md:mb-0">© 2025 Syncline. All rights reserved.</p>
+<div class="flex space-x-6">
+<a href="#" class="text-white/60 text-sm hover:text-white transition-colors">Privacy Policy</a>
+<a href="#" class="text-white/60 text-sm hover:text-white transition-colors">Terms of Service</a>
+</div>
+</div>
+</div>
+</footer>
+<!-- Back to top button -->
+<button id="back-to-top" class="fixed bottom-8 right-8 w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center opacity-0 invisible transition-all z-50">
+<i class="ri-arrow-up-line ri-lg"></i>
+</button>
+
+<script id="mobile-menu-script">
+document.addEventListener('DOMContentLoaded', () => {
+    const menuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = menuButton.querySelector('i');
+
+    menuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        if (mobileMenu.classList.contains('hidden')) {
+            menuIcon.classList.remove('ri-close-line');
+            menuIcon.classList.add('ri-menu-line');
+        } else {
+            menuIcon.classList.remove('ri-menu-line');
+            menuIcon.classList.add('ri-close-line');
+        }
+    });
+});
+</script>
+<script id="custom-cursor-script">
+    document.addEventListener('DOMContentLoaded', () => {
+        const cursorDot = document.querySelector('.cursor-dot');
+        const cursorOutline = document.querySelector('.cursor-outline');
+
+        if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+            let mouseX = 0, mouseY = 0, outlineX = 0, outlineY = 0;
+            window.addEventListener('mousemove', (e) => { mouseX = e.clientX; mouseY = e.clientY; });
+            const animateCursor = () => {
+                cursorDot.style.left = `${mouseX}px`;
+                cursorDot.style.top = `${mouseY}px`;
+                const speed = 0.15;
+                outlineX += (mouseX - outlineX) * speed;
+                outlineY += (mouseY - outlineY) * speed;
+                cursorOutline.style.left = `${outlineX}px`;
+                cursorOutline.style.top = `${outlineY}px`;
+                requestAnimationFrame(animateCursor);
+            };
+            requestAnimationFrame(animateCursor);
+            const interactiveElements = document.querySelectorAll('a, button, input, textarea, select, .blog-card, [role="button"]');
+            interactiveElements.forEach(el => {
+                el.addEventListener('mouseenter', () => cursorOutline.classList.add('grow'));
+                el.addEventListener('mouseleave', () => cursorOutline.classList.remove('grow'));
+            });
+        }
+    });
+</script>
+<script id="back-to-top-script">
+document.addEventListener('DOMContentLoaded', function() {
+const backToTopButton = document.getElementById('back-to-top');
+window.addEventListener('scroll', function() {
+if (window.scrollY > 300) {
+backToTopButton.classList.remove('opacity-0', 'invisible');
+backToTopButton.classList.add('opacity-100', 'visible');
+} else {
+backToTopButton.classList.add('opacity-0', 'invisible');
+backToTopButton.classList.remove('opacity-100', 'visible');
+}
+});
+backToTopButton.addEventListener('click', function() {
+window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+});
+</script>
+</body>
+</html>

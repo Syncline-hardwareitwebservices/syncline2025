@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Support Center - Syncline Technology Solutions</title>
+<link rel="icon" href="image/logosyncline.png" type="image/x-icon">
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+    font-family: 'Inter', sans-serif;
+    scroll-behavior: smooth;
+    cursor: none; /* Hide default cursor on desktop */
+}
+/* Apply custom cursor to interactive elements, but restore default on mobile */
+@media (hover: hover) and (pointer: fine) {
+    a, button, input, textarea, select, .support-card, [role="button"], details > summary {
+        cursor: none;
+    }
+}
+.hero-bg {
+    background-image: url('https://readdy.ai/api/search-image?query=friendly%20customer%20support%20team%20in%20a%20modern%20tech%20office%2C%20diverse%20group%20of%20professionals%20with%20headsets%20working%20at%20computers%2C%20clean%20environment%20with%20blue%20and%20green%20lighting%2C%20positive%20atmosphere&width=1920&height=1080&seq=support1&orientation=landscape');
+    background-size: cover;
+    background-position: center;
+}
+.support-card {
+    transition: all 0.3s ease;
+}
+.support-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    border-color: #4F9DDE;
+}
+input:focus, textarea:focus, select:focus {
+    outline: none;
+    border-color: #4F9DDE;
+    box-shadow: 0 0 0 2px rgba(79, 157, 222, 0.2);
+}
+.cursor-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #8CFB91;
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: transform 0.1s ease;
+}
+.cursor-outline {
+    width: 40px;
+    height: 40px;
+    border: 2px solid #4F9DDE;
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9998;
+    transform: translate(-50%, -50%);
+    transition: transform 0.2s ease-out, width 0.2s ease-out, height 0.2s ease-out, border-color 0.2s ease-out, background-color 0.2s ease-out;
+}
+.cursor-outline.grow {
+    transform: translate(-50%, -50%) scale(1.5);
+    background-color: rgba(140, 251, 145, 0.1);
+    border-color: #8CFB91;
+}
+.text-gradient {
+    background: linear-gradient(90deg, #4F9DDE, #8CFB91);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+/* FAQ Accordion Styling */
+details > summary {
+    list-style: none;
+    cursor: pointer;
+}
+details > summary::-webkit-details-marker {
+    display: none;
+}
+details .faq-icon {
+    transition: transform 0.3s ease;
+}
+details[open] .faq-icon {
+    transform: rotate(45deg);
+}
+</style>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#2E2A68',secondary:'#4F9DDE', neonGreen: '#8CFB91', slateGray: '#2F3542'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+</head>
+<body class="bg-black">
+<div class="cursor-dot hidden md:block"></div>
+<div class="cursor-outline hidden md:block"></div>
+<!-- Header -->
+<header class="fixed w-full z-50 py-3 bg-black/40 backdrop-blur-sm">
+    <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center">
+            <!-- Logo -->
+            <a href="index.html" class="flex items-center space-x-2 group flex-shrink-0">
+                <div class="relative w-12 h-12 flex items-center justify-center">
+                    <img src="image/syncline.jpg" alt="Syncline Logo Icon" class="h-10">
+                </div>
+                <div>
+                    <span class="block text-xl font-medium uppercase"><b style="color: #4F9DDE">Sync</b><b style="color: #8CFB91">line</b></span>
+                    <span class="block text-xs font-semibold text-white tracking-[0.2em] uppercase">Computer Solutions</span>
+                </div>
+            </a>
+            
+            <!-- Desktop Navigation (Centered) -->
+            <div class="hidden lg:flex justify-center items-center flex-grow">
+                <div class="flex items-center bg-[#1c1c1e] p-1 rounded-2xl">
+                    <nav class="flex items-center space-x-1">
+                        <a href="index.html" class="flex items-center space-x-2 px-4 py-2 text-sm text-gray-400 hover:text-white transition-colors">
+                            <i class="ri-home-5-line"></i>
+                            <span>Home</span>
+                        </a>
+                        <a href="services.html" class="flex items-center space-x-2 px-4 py-2 text-sm text-gray-400 hover:text-white transition-colors">
+                            <i class="ri-settings-2-line"></i>
+                            <span>Services</span>
+                        </a>
+                        <a href="support.html" class="flex items-center space-x-2 px-4 py-2 text-sm text-white bg-[#333336] rounded-xl">
+                            <i class="ri-lifebuoy-line"></i>
+                            <span>Support</span>
+                        </a>
+                        <a href="blogs.html" class="flex items-center space-x-2 px-4 py-2 text-sm text-gray-400 hover:text-white transition-colors">
+                            <i class="ri-newspaper-line"></i>
+                            <span>Blogs</span>
+                        </a>
+                        <a href="about.html" class="flex items-center space-x-2 px-4 py-2 text-sm text-gray-400 hover:text-white transition-colors">
+                            <i class="ri-building-4-line"></i>
+                            <span>About Us</span>
+                        </a>
+                        <a href="products.html" class="flex items-center space-x-2 px-4 py-2 text-sm text-gray-400 hover:text-white transition-colors">
+                            <i class="ri-shopping-cart-line"></i>
+                            <span>Products</span>
+                        </a>
+                    </nav>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu Button & Spacer -->
+            <div class="flex items-center justify-end flex-shrink-0 w-12 h-12">
+                <button id="mobile-menu-button" class="lg:hidden text-white text-3xl focus:outline-none">
+                    <i class="ri-menu-line"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-black/95 absolute w-full left-0 top-full">
+        <nav class="flex flex-col space-y-2 p-4">
+            <a href="index.html" class="flex items-center space-x-3 p-3 text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition-colors">
+                <i class="ri-home-5-line"></i>
+                <span>Home</span>
+            </a>
+            <a href="services.html" class="flex items-center space-x-3 p-3 text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition-colors">
+                <i class="ri-settings-2-line"></i>
+                <span>Services</span>
+            </a>
+            <a href="support.html" class="flex items-center space-x-3 p-3 text-white bg-gray-800 rounded-lg">
+                <i class="ri-lifebuoy-line"></i>
+                <span>Support</span>
+            </a>
+            <a href="blogs.html" class="flex items-center space-x-3 p-3 text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition-colors">
+                <i class="ri-newspaper-line"></i>
+                <span>Blogs</span>
+            </a>
+            <a href="about.html" class="flex items-center space-x-3 p-3 text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition-colors">
+                <i class="ri-building-4-line"></i>
+                <span>About Us</span>
+            </a>
+            <a href="products.html" class="flex items-center space-x-3 p-3 text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition-colors">
+                <i class="ri-shopping-cart-line"></i>
+                <span>Products</span>
+            </a>
+        </nav>
+    </div>
+</header>
+
+<!-- Hero Section -->
+<section class="hero-bg relative min-h-[60vh] flex items-center justify-center text-center pt-24">
+    <div class="absolute inset-0 bg-gradient-to-t from-black to-primary/60"></div>
+    <div class="container mx-auto px-6 py-24 relative z-10">
+        <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight mb-6">Dedicated Support When <span class="text-gradient">You Need It Most</span></h1>
+        <p class="text-lg md:text-xl text-white/90 mb-8 max-w-3xl mx-auto">Welcome to the Syncline Support Center. We're here to provide you with timely assistance, helpful resources, and expert guidance to ensure your success.</p>
+        <div class="flex flex-wrap justify-center gap-4">
+            <a href="#submit-ticket" class="bg-secondary text-white px-8 py-3 !rounded-button font-medium hover:bg-opacity-90 transition-all whitespace-nowrap">Open a Ticket</a>
+            <a href="#knowledge-base" class="bg-transparent border-2 border-neonGreen text-neonGreen px-8 py-3 !rounded-button font-medium hover:bg-neonGreen/10 transition-all whitespace-nowrap">Browse Knowledge Base</a>
+        </div>
+    </div>
+</section>
+
+<!-- Support Options Section -->
+<section id="support-options" class="py-24 bg-white">
+    <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-5xl font-bold text-primary mb-4">How Can We Help You?</h2>
+            <p class="text-lg text-slateGray max-w-2xl mx-auto">Explore our support channels to find the answers and assistance you need, right when you need it.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Card 1: Knowledge Base -->
+            <div class="support-card bg-white p-8 rounded-lg shadow-lg border border-gray-100">
+                <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6"><i class="ri-book-read-line ri-2x text-primary"></i></div>
+                <h3 class="text-xl font-semibold text-primary mb-3">Knowledge Base</h3>
+                <p class="text-slateGray mb-6">Find articles, tutorials, and answers to frequently asked questions in our comprehensive knowledge base.</p>
+                <a href="#knowledge-base" class="inline-flex items-center text-secondary font-medium">Search Now <i class="ri-arrow-right-line ml-2"></i></a>
+            </div>
+            <!-- Card 2: Submit a Ticket -->
+            <div class="support-card bg-white p-8 rounded-lg shadow-lg border border-gray-100">
+                <div class="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mb-6"><i class="ri-ticket-line ri-2x text-secondary"></i></div>
+                <h3 class="text-xl font-semibold text-primary mb-3">Submit a Ticket</h3>
+                <p class="text-slateGray mb-6">For detailed or non-urgent issues, submit a support ticket and our team will get back to you promptly.</p>
+                <a href="#submit-ticket" class="inline-flex items-center text-secondary font-medium">Create Ticket <i class="ri-arrow-right-line ml-2"></i></a>
+            </div>
+            <!-- Card 3: Live Chat -->
+            <div class="support-card bg-white p-8 rounded-lg shadow-lg border border-gray-100">
+                <div class="w-16 h-16 bg-neonGreen/10 rounded-full flex items-center justify-center mb-6"><i class="ri-chat-3-line ri-2x text-neonGreen"></i></div>
+                <h3 class="text-xl font-semibold text-primary mb-3">Live Chat</h3>
+                <p class="text-slateGray mb-6">Need a quick answer? Chat with one of our support specialists for real-time assistance during business hours.</p>
+                <a href="#" class="inline-flex items-center text-secondary font-medium">Start Chat <i class="ri-arrow-right-line ml-2"></i></a>
+            </div>
+            <!-- Card 4: Phone Support -->
+            <div class="support-card bg-white p-8 rounded-lg shadow-lg border border-gray-100">
+                <div class="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mb-6"><i class="ri-phone-line ri-2x text-secondary"></i></div>
+                <h3 class="text-xl font-semibold text-primary mb-3">Phone Support</h3>
+                <p class="text-slateGray mb-6">For urgent issues, call our support line to speak directly with an expert. Available 24/7 for critical incidents.</p>
+                <a href="tel:+15551234567" class="inline-flex items-center text-secondary font-medium">+1 (555) 123-4567 <i class="ri-arrow-right-line ml-2"></i></a>
+            </div>
+            <!-- Card 5: Remote Assistance -->
+            <div class="support-card bg-white p-8 rounded-lg shadow-lg border border-gray-100">
+                <div class="w-16 h-16 bg-neonGreen/10 rounded-full flex items-center justify-center mb-6"><i class="ri-computer-line ri-2x text-neonGreen"></i></div>
+                <h3 class="text-xl font-semibold text-primary mb-3">Remote Assistance</h3>
+                <p class="text-slateGray mb-6">Allow our technicians to securely connect to your system to troubleshoot and resolve issues directly.</p>
+                <a href="#" class="inline-flex items-center text-secondary font-medium">Request Session <i class="ri-arrow-right-line ml-2"></i></a>
+            </div>
+            <!-- Card 6: Community Forums -->
+            <div class="support-card bg-white p-8 rounded-lg shadow-lg border border-gray-100">
+                <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6"><i class="ri-group-2-line ri-2x text-primary"></i></div>
+                <h3 class="text-xl font-semibold text-primary mb-3">Community Forums</h3>
+                <p class="text-slateGray mb-6">Connect with other Syncline users, share solutions, and discuss best practices in our community forums.</p>
+                <a href="#" class="inline-flex items-center text-secondary font-medium">Visit Forums <i class="ri-arrow-right-line ml-2"></i></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Submit Ticket Section -->
+<section id="submit-ticket" class="py-24 bg-gray-50">
+    <div class="container mx-auto px-6">
+        <div class="flex flex-col lg:flex-row gap-12 items-center">
+            <div class="lg:w-2/5">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-6">Submit a Support Ticket</h2>
+                <p class="text-slateGray mb-8">Please provide as much detail as possible so we can assist you effectively. Our team typically responds within 4 business hours. For urgent issues, please call us directly.</p>
+                <div class="bg-primary/5 border-l-4 border-primary p-6 rounded-r-lg">
+                    <h4 class="font-semibold text-primary mb-2">Before you submit:</h4>
+                    <ul class="list-disc list-inside text-slateGray space-y-2 text-sm">
+                        <li>Have you checked our <a href="#knowledge-base" class="text-secondary font-medium underline">Knowledge Base</a> for a solution?</li>
+                        <li>For billing inquiries, please email billing@syncline.tech.</li>
+                        <li>Include any relevant error messages or screenshots.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="lg:w-3/5 bg-white p-8 md:p-12 rounded-lg shadow-xl">
+                <form class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-slateGray mb-2">Full Name</label>
+                            <input type="text" id="name" class="w-full px-4 py-3 rounded-lg border border-gray-300" placeholder="John Smith" required>
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-slateGray mb-2">Email Address</label>
+                            <input type="email" id="email" class="w-full px-4 py-3 rounded-lg border border-gray-300" placeholder="john@example.com" required>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="subject" class="block text-sm font-medium text-slateGray mb-2">Subject</label>
+                        <input type="text" id="subject" class="w-full px-4 py-3 rounded-lg border border-gray-300" placeholder="e.g., Issue with Web Server" required>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                         <div>
+                            <label for="service" class="block text-sm font-medium text-slateGray mb-2">Related Service/Product</label>
+                            <div class="relative"><select id="service" class="w-full px-4 py-3 rounded-lg border border-gray-300 appearance-none pr-8"><option value="" disabled selected>Select a service</option><option value="hardware">Hardware Solutions</option><option value="webdev">Web Development</option><option value="it">IT Solutions</option><option value="uiux">UI/UX Design</option><option value="webservices">Web Services</option><option value="other">Other</option></select><div class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none"><i class="ri-arrow-down-s-line text-slateGray"></i></div></div>
+                        </div>
+                        <div>
+                            <label for="priority" class="block text-sm font-medium text-slateGray mb-2">Priority Level</label>
+                            <div class="relative"><select id="priority" class="w-full px-4 py-3 rounded-lg border border-gray-300 appearance-none pr-8"><option value="low">Low</option><option value="medium" selected>Medium</option><option value="high">High</option><option value="urgent">Urgent</option></select><div class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none"><i class="ri-arrow-down-s-line text-slateGray"></i></div></div>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-slateGray mb-2">Describe Your Issue</label>
+                        <textarea id="message" rows="5" class="w-full px-4 py-3 rounded-lg border border-gray-300" placeholder="Please provide details, steps to reproduce, and any error messages." required></textarea>
+                    </div>
+                     <div>
+                        <label for="attachment" class="block text-sm font-medium text-slateGray mb-2">Attach File (Optional)</label>
+                        <input type="file" id="attachment" class="w-full text-sm text-slateGray file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-secondary/10 file:text-secondary hover:file:bg-secondary/20">
+                    </div>
+                    <button type="submit" class="bg-primary text-white px-8 py-3 !rounded-button font-medium hover:bg-opacity-90 transition-all whitespace-nowrap w-full md:w-auto">Submit Ticket</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Knowledge Base / FAQ Section -->
+<section id="knowledge-base" class="py-24 bg-white">
+    <div class="container mx-auto px-6">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-5xl font-bold text-primary mb-4">Knowledge Base & FAQ</h2>
+            <p class="text-lg text-slateGray max-w-2xl mx-auto">Find quick answers to common questions. Start by searching or browse the categories below.</p>
+        </div>
+        <div class="max-w-3xl mx-auto">
+            <!-- Search Bar -->
+            <div class="relative mb-12">
+                <input type="search" placeholder="Search for answers..." class="w-full px-6 py-4 rounded-lg border border-gray-300 pl-14">
+                <i class="ri-search-line absolute left-5 top-1/2 -translate-y-1/2 text-slateGray text-xl"></i>
+            </div>
+            <!-- FAQ List -->
+            <div class="space-y-4">
+                <details class="group bg-gray-50 p-6 rounded-lg border border-gray-200">
+                    <summary class="flex justify-between items-center font-semibold text-primary text-lg">How do I check the status of my support ticket?<i class="ri-add-line faq-icon text-secondary text-2xl"></i></summary>
+                    <div class="mt-4 text-slateGray">After submitting a ticket, you will receive a confirmation email with a ticket ID and a link to track its status. You can also log in to your client portal to view all your active and past tickets.</div>
+                </details>
+                <details class="group bg-gray-50 p-6 rounded-lg border border-gray-200">
+                    <summary class="flex justify-between items-center font-semibold text-primary text-lg">What are your official support hours?<i class="ri-add-line faq-icon text-secondary text-2xl"></i></summary>
+                    <div class="mt-4 text-slateGray">Our standard support hours for tickets and live chat are Monday - Friday, 9:00 AM - 6:00 PM (PST). Phone support for urgent and critical issues is available 24/7.</div>
+                </details>
+                <details class="group bg-gray-50 p-6 rounded-lg border border-gray-200">
+                    <summary class="flex justify-between items-center font-semibold text-primary text-lg">What information should I include in my support request?<i class="ri-add-line faq-icon text-secondary text-2xl"></i></summary>
+                    <div class="mt-4 text-slateGray">To help us resolve your issue faster, please include your product/service name, a detailed description of the problem, any error messages you've received, and steps to reproduce the issue. Screenshots are also very helpful.</div>
+                </details>
+                <details class="group bg-gray-50 p-6 rounded-lg border border-gray-200">
+                    <summary class="flex justify-between items-center font-semibold text-primary text-lg">Do you offer service-level agreements (SLAs)?<i class="ri-add-line faq-icon text-secondary text-2xl"></i></summary>
+                    <div class="mt-4 text-slateGray">Yes, we offer custom SLAs for our enterprise clients and managed service partners. These agreements guarantee response times and resolution targets based on issue priority. Please contact our sales team for more information.</div>
+                </details>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Footer -->
+<footer class="bg-primary text-white pt-16 pb-8">
+<div class="container mx-auto px-6">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+<div>
+<a href="index.html" class="text-3xl font-['Pacifico'] text-white mb-6 inline-block">Syncline</a>
+<p class="text-white/80 mb-6">Uniting hardware expertise, innovative IT solutions, and cutting-edge web services to transform your digital presence.</p>
+<div class="flex space-x-4">
+<a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-all"><i class="ri-linkedin-fill"></i></a>
+<a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-all"><i class="ri-twitter-x-fill"></i></a>
+<a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-all"><i class="ri-facebook-fill"></i></a>
+<a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-all"><i class="ri-instagram-fill"></i></a>
+</div>
+</div>
+<div>
+<h3 class="text-xl font-semibold mb-6">Our Services</h3>
+<ul class="space-y-3">
+<li><a href="services.html#service-hardware" class="text-white/80 hover:text-neonGreen transition-colors">Hardware Solutions</a></li>
+<li><a href="services.html#service-webdev" class="text-white/80 hover:text-neonGreen transition-colors">Web Development</a></li>
+<li><a href="services.html#service-it" class="text-white/80 hover:text-neonGreen transition-colors">IT Solutions</a></li>
+<li><a href="services.html#service-uiux" class="text-white/80 hover:text-neonGreen transition-colors">UI/UX Design</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-xl font-semibold mb-6">Quick Links</h3>
+<ul class="space-y-3">
+<li><a href="about.html" class="text-white/80 hover:text-neonGreen transition-colors">About Us</a></li>
+<li><a href="index.html#projects" class="text-white/80 hover:text-neonGreen transition-colors">Our Projects</a></li>
+<li><a href="services.html" class="text-white/80 hover:text-neonGreen transition-colors">All Services</a></li>
+<li><a href="support.html#knowledge-base" class="text-white/80 hover:text-neonGreen transition-colors">FAQ</a></li>
+<li><a href="index.html#contact" class="text-white/80 hover:text-neonGreen transition-colors">Contact Us</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-xl font-semibold mb-6">Contact Support</h3>
+<ul class="space-y-4">
+<li class="flex items-start">
+<div class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center mr-4"><i class="ri-mail-line"></i></div>
+<span class="text-white/80">support@syncline.tech</span>
+</li>
+<li class="flex items-start">
+<div class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center mr-4"><i class="ri-phone-line"></i></div>
+<span class="text-white/80">+1 (555) 123-4567</span>
+</li>
+<li class="flex items-start">
+<div class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center mr-4"><i class="ri-ticket-line"></i></div>
+<a href="#submit-ticket" class="text-white/80 hover:text-neonGreen transition-colors">Submit a Ticket</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="pt-8 border-t border-white/20 flex flex-col md:flex-row justify-between items-center">
+<p class="text-white/60 text-sm mb-4 md:mb-0">© 2025 Syncline. All rights reserved.</p>
+<div class="flex space-x-6">
+<a href="#" class="text-white/60 text-sm hover:text-white transition-colors">Privacy Policy</a>
+<a href="#" class="text-white/60 text-sm hover:text-white transition-colors">Terms of Service</a>
+</div>
+</div>
+</div>
+</footer>
+<!-- Back to top button -->
+<button id="back-to-top" class="fixed bottom-8 right-8 w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center opacity-0 invisible transition-all z-50">
+<i class="ri-arrow-up-line ri-lg"></i>
+</button>
+
+<script id="mobile-menu-script">
+document.addEventListener('DOMContentLoaded', () => {
+    const menuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = menuButton.querySelector('i');
+
+    menuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        if (mobileMenu.classList.contains('hidden')) {
+            menuIcon.classList.remove('ri-close-line');
+            menuIcon.classList.add('ri-menu-line');
+        } else {
+            menuIcon.classList.remove('ri-menu-line');
+            menuIcon.classList.add('ri-close-line');
+        }
+    });
+});
+</script>
+<script id="custom-cursor-script">
+    document.addEventListener('DOMContentLoaded', () => {
+        const cursorDot = document.querySelector('.cursor-dot');
+        const cursorOutline = document.querySelector('.cursor-outline');
+
+        if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+            let mouseX = 0, mouseY = 0, outlineX = 0, outlineY = 0;
+            window.addEventListener('mousemove', (e) => { mouseX = e.clientX; mouseY = e.clientY; });
+            const animateCursor = () => {
+                cursorDot.style.left = `${mouseX}px`;
+                cursorDot.style.top = `${mouseY}px`;
+                const speed = 0.15;
+                outlineX += (mouseX - outlineX) * speed;
+                outlineY += (mouseY - outlineY) * speed;
+                cursorOutline.style.left = `${outlineX}px`;
+                cursorOutline.style.top = `${outlineY}px`;
+                requestAnimationFrame(animateCursor);
+            };
+            requestAnimationFrame(animateCursor);
+            const interactiveElements = document.querySelectorAll('a, button, input, textarea, select, .support-card, [role="button"], details > summary');
+            interactiveElements.forEach(el => {
+                el.addEventListener('mouseenter', () => cursorOutline.classList.add('grow'));
+                el.addEventListener('mouseleave', () => cursorOutline.classList.remove('grow'));
+            });
+        }
+    });
+</script>
+<script id="back-to-top-script">
+document.addEventListener('DOMContentLoaded', function() {
+const backToTopButton = document.getElementById('back-to-top');
+window.addEventListener('scroll', function() {
+if (window.scrollY > 300) {
+backToTopButton.classList.remove('opacity-0', 'invisible');
+backToTopButton.classList.add('opacity-100', 'visible');
+} else {
+backToTopButton.classList.add('opacity-0', 'invisible');
+backToTopButton.classList.remove('opacity-100', 'visible');
+}
+});
+backToTopButton.addEventListener('click', function() {
+window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+});
+</script>
+</body>
+</html>
